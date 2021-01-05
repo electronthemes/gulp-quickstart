@@ -1,0 +1,116 @@
+/*------------------------------------------------------------------
+Common Stylesheet
+
+Project:   Theme Name
+Build:     Bootstrap 3.3.7
+Author:    Enamul Haque
+Author URL: http://www.enamul.me
+
+-------------------------------------------------------------------*/
+
+
+/* ----------------------------------------------------------------
+    typography
+-----------------------------------------------------------------*/
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background: var(--body-bg);
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin-bottom: 15px;
+    color: var(--heading);
+    font-weight: 700;
+}
+
+p{
+    color: var(--paragraph);
+}
+
+a:active,
+a:focus,
+input,
+select,
+textarea {
+    outline: none !important;
+}
+
+img {
+    max-width: 100%;
+}
+
+a,
+.container {
+    text-decoration: none !important;
+    transition: all .5s;
+}
+
+a,a:hover {
+    color: var(--primary);
+}
+
+a:hover,
+.btn,
+button,
+.btn:hover {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+select{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+}
+
+p{
+    margin: 0;
+}
+
+section{
+    overflow: hidden;
+}
+
+.go-top {
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    display: none;
+    z-index: 99;
+}
+
+#top {
+    background: transparent;
+    color: rgba( var(--white), .5 );
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 700;
+    transition: .3s;
+    &:hover{
+        color: var(--white);
+    }
+}
+
+.border-top,
+.border-right,
+.border-bottom,
+.border-left{
+    border-color: var(--border) !important;
+}
