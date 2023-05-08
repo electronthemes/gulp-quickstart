@@ -1,13 +1,11 @@
 const {series, dest, src, watch} = require('gulp')
 const twig = require('gulp-twig')
-const sass = require('gulp-sass')
+const sass = require('gulp-sass')(require('sass'))
 const sourcemap = require('gulp-sourcemaps')
 const browsersync = require('browser-sync').create()
 const concat = require('gulp-concat')
 const uglify = require('gulp-uglify')
-const postcss = require('gulp-postcss');
-
-
+const clean = require('gulp-clean')
 
 // Template engine twig
 function templateTask(){
@@ -67,6 +65,11 @@ function browsersyncServe(cb){
     cb()
 }
 
+// Destroy dist folder
+function destroyDist(){
+    return src('./dist/', {read: true, allowEmpty: true}).pipe(clean());
+}
+
 // Watch all files
 function watcher(){
     watch('./src/**/*.twig').on("change", series(templateTask, browsersync.reload))
@@ -78,9 +81,9 @@ function watcher(){
     watch('./src/assets/fonts/**', custonFonts)
 }
 
-
-
+// Default series task
 exports.default = series(
+    destroyDist,
     templateTask, 
     styleTask, 
     cssPluginTask,
